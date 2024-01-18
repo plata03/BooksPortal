@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="text-align: center; background-color: #222222; color: white">
+<h1>Book book = new Book()!</h1>
+<form th:action="@{/newbook}" th:object="${book}" method="post">
+    <table style="display: flex; justify-content: center;">
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" th:field="*{title}" /></td>
+            <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</td>
+        </tr>
+        <tr>
+            <td>Author:</td>
+            <td><input type="text" th:field="*{author}" /></td>
+            <td th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</td>
+        </tr>
+        <tr>
+            <td>Release Year:</td>
+            <td><input type="text" th:field="*{releaseYear}" /></td>
+            <td th:if="${#fields.hasErrors('releaseYear')}" th:errors="*{releaseYear}">Release Year Error</td>
+        </tr>
+        <tr>
+            <td>Publisher:</td>
+            <td><input type="text" th:field="*{publisher}" /></td>
+            <td th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}">Publisher Error</td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" th:field="*{price}" /></td>
+            <td th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</td>
+        </tr>
+    </table>
+    <button type="submit" style="margin-top: 5%">Add it</button>
+</form>
+</body>
+</html>

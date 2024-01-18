@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body style="background-color: #222222">
+  <h1 style="text-align: center; color: red">Welcome to... ilPlataBookStoreThingy.cs!</h1>
+  <div style="display: flex; justify-content: center; gap: 10%">
+      <form th:action="@{/login}">
+        <button type="submit" style="background-color: transparent; border-color: red; color: red; padding: 10px">Login</button>
+      </form>
+      <form th:action="@{/register}">
+        <button type="submit" style="background-color: transparent; border-color: red; color: red; padding: 10px">Register</button>
+      </form>
+  </div>
+</body>
+</html>

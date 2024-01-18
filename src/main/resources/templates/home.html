@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body style="text-align: center; background-color: #222222; color: white">
+  <h1>Welcome Back! </h1>
+  <span th:text="${username}" ></span>
+  <form th:action="@{/newbook}">
+      <button type="submit" style="margin-top: 75px; background-color: transparent; border-color: red; color: red; padding: 15px">Add New Book</button>
+  </form>
+    <table style="margin-right: auto; margin-left: auto; border-color: white; border-style: solid; margin-top: 5%; width: fit-content">
+        <tr style="border-style: dashed">
+            <td style="border-style: dashed; font-weight: bold; color: red">Title</td>
+            <td style="border-style: dashed; font-weight: bold; color: red">Author</td>
+            <td style="border-style: dashed; font-weight: bold; color: red">Publisher</td>
+            <td style="border-style: dashed; font-weight: bold; color: red">Release Year</td>
+            <td style="border-style: dashed; font-weight: bold; color: red">Price</td>
+
+        </tr>
+        <tr style="border-style: dashed" th:each="book : ${books}">
+            <td style="border-style: dashed" th:text="${book.title}"></td>
+            <td style="border-style: dashed" th:text="${book.author}"></td>
+            <td style="border-style: dashed" th:text="${book.publisher}"></td>
+            <td style="border-style: dashed" th:text="${book.releaseYear}"></td>
+            <td style="border-style: dashed" th:text="${book.price}"></td>
+
+        </tr>
+    </table>
+</body>
+</html>
